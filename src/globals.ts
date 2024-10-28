@@ -6,7 +6,7 @@ let REQUEST: Req;
 let ENV: Env;
 let CTX: ExecutionContext;
 
-export let GLOBALS = {
+export const GLOBALS = {
 	request: {
 		'setRequest': function(request: Req): void {
 			REQUEST = request;

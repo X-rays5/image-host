@@ -60,7 +60,7 @@ export async function StoreImage(): Promise<Response> {
 
 		const stmt = env.DB.prepare('SELECT secret FROM upload_secrets WHERE secret = ?').bind(upload_token);
 		const secrets = await stmt.raw();
-		if (!secrets || !secrets.length) {
+		if (!secrets?.length) {
 			return ErrorResponse(401, 'Given X-Upload-Token not valid');
 		}
 
